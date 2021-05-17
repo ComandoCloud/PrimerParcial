@@ -10,21 +10,20 @@ public class Factura {
     private Repuesto repuestos[];
     private double montoTotal;
 
-      public Factura(int NumeroFactura,Repuesto repuestos[] ,double montoTotal){
+    public Factura(int NumeroFactura,Repuesto repuestos[] ,double montoTotal){
          this.NumeroFactura=NumeroFactura;
          this.repuestos=repuestos;
-         this.montoTotal=montoTotal;
+         this.montoTotal = montoTotal;
     }
     
     public double calculaMonto(){
-         double montoTotalLlanta=0;
-         for (int i = 0; i < this.repuestos.length; i++){
-          if(this.repuestos[i] instanceof Llantas ){
-             montoTotalLlanta=montoTotalLlanta + (montoTotalLlanta * 1.21);
-         }else
-              montoTotalLlanta = montoTotalLlanta + montoTotalLlanta;
+        for (int i = 0; i < this.repuestos.length; i++){
+        if(this.repuestos[i] instanceof Llantas ){
+            this.montoTotal=this.montoTotal + (this.montoTotal * 1.21);
+        }else
+            this.montoTotal = this.montoTotal + this.montoTotal;
        }
-       return montoTotalLlanta;
+       return this.montoTotal;
     }
     public int getNumeroFactura() {
         return NumeroFactura;
@@ -41,5 +40,4 @@ public class Factura {
     public void setRepuesto(Repuesto[] repuestos) {
         this.repuestos = repuestos;
     }
-    
 }
