@@ -9,11 +9,17 @@ package primerparcial;
  *
  * @author Maximiliano Kiss
  */
-public class EmpleadoPorComision {
+public class EmpleadoPorComision extends Empleado {
     private double salarioBase;
     private int cantidadReparaciones;
     private double tarifaComision;
 
+     public EmpleadoPorComision(String Nombre,String Apellido,int numero, double salarioBase, int cantidadReparaciones,double tarifaComision){
+          super(Nombre,Apellido,numero);
+          this.salarioBase = salarioBase;
+          this.cantidadReparaciones = cantidadReparaciones;
+          this.tarifaComision = tarifaComision;
+     }
     /**
      * @return the salarioBase
      */

@@ -9,7 +9,7 @@ package primerparcial;
  *
  * @author Maximiliano Kiss
  */
-public class EmpleadoPorHoras {
+public class EmpleadoPorHoras extends Empleado{
     
     private double sueldoPorHora;
     private int horasTrabajadas;
@@ -41,4 +41,7 @@ public class EmpleadoPorHoras {
     public void setHorasTrabajadas(int horasTrabajadas) {
         this.horasTrabajadas = horasTrabajadas;
     }
+    
+    
+   
 }

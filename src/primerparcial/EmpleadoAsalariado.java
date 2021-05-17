@@ -9,9 +9,14 @@ package primerparcial;
  *
  * @author Maximiliano Kiss
  */
-public class EmpleadoAsalariado {
+public class EmpleadoAsalariado extends Empleado {
     private double salarioSemanal;
 
+    public EmpleadoAsalariado(String Nombre,String Apellido,int numero,double salarioSemanal){
+        super(Nombre,Apellido,numero);
+        this.salarioSemanal = salarioSemanal;
+        
+    }
     /**
      * @return the salarioSemanal
      */
@@ -26,5 +31,10 @@ public class EmpleadoAsalariado {
         this.salarioSemanal = salarioSemanal;
     }
     
+    @Override public double Ingresos(){
+        double semanales = 15000;
+        return semanales * 4;
+    }
+
     
 }
