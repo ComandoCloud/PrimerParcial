@@ -15,7 +15,7 @@ public class EmpleadoPorComision extends Empleado {
     private int cantidadReparaciones;
     private double tarifaComision;
 
-     public EmpleadoPorComision(String Nombre,String Apellido,int numero, double salarioBase, int cantidadReparaciones,double tarifaComision){
+    public EmpleadoPorComision(String Nombre,String Apellido,int numero, double salarioBase, int cantidadReparaciones,double tarifaComision){
           super(Nombre,Apellido,numero);
           this.salarioBase = salarioBase;
           this.cantidadReparaciones = cantidadReparaciones;
@@ -64,6 +64,10 @@ public class EmpleadoPorComision extends Empleado {
     }
     
         
+    @Override public String toString(){
+        return this.Nombre + " , " + this.Apellido;
+    }
+    
     @Override public double Ingresos(){
         return 600 * this.cantidadReparaciones ;
     }

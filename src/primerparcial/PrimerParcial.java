@@ -13,15 +13,16 @@ import java.io.*;
  */
 public class PrimerParcial {
 
-    	public static Scanner sc = new Scanner(System.in);
+    public static Scanner sc = new Scanner(System.in);
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
         int Opcion =0;
-                    List<EmpleadoAsalariado> ListaAsalariado = new ArrayList<EmpleadoAsalariado>();  
-            List<EmpleadoPorHoras> ListaEmpleadoHoras = new ArrayList<EmpleadoPorHoras>(); 
+        List<EmpleadoAsalariado> ListaAsalariado = new ArrayList<EmpleadoAsalariado>();  
+        List<EmpleadoPorHoras> ListaEmpleadoHoras = new ArrayList<EmpleadoPorHoras>(); 
+        List<EmpleadoPorComision> ListaComision = new ArrayList<EmpleadoPorComision>(); 
         do{
             Opcion =0;
             System.out.println("Ingrese una opcion: \n1.CARGAR EMPLEADOS \n2.CARGAR DEUDAS/FACTURAS \n3.MOSTRAR EMPLEADOS CON SALARIOS \n4.MOSTRAR FACTURAS CON DEUDAS");
@@ -52,13 +53,20 @@ public class PrimerParcial {
 
                     }
                     else{
-                        System.out.println("Opcion 3");
+                        EmpleadoPorComision oComision = new EmpleadoPorComision("Alejo", "Moya" ,1 , 2000, 2 , 3000);
+                        ListaComision.add(oComision);
+                        EmpleadoPorComision oComision2 = new EmpleadoPorComision("Maxi", "Kiss" ,2 , 4000, 3 , 8000);
+                        ListaComision.add(oComision2);
+                        EmpleadoPorComision oComision3 = new EmpleadoPorComision("Irene", "Zamora" ,3 , 6000, 5 , 5000);
+                        ListaComision.add(oComision3);
                     }
                     break;
                 case 2:
                     Repuesto[] verRep = new Repuesto[3];
-                    //Repuesto[0] = new Repuesto();
-                    //Factura oFactura = new Factura(1 , );
+                    verRep[0] = new Repuesto(1000);
+                    verRep[1] = new Repuesto(2000);
+                    verRep[2] = new Repuesto(3000);
+                    Factura oFactura = new Factura(1 , verRep, 2500);
                     break;
                 case 3:
                         for(EmpleadoPorHoras objeto : ListaEmpleadoHoras) 
@@ -66,6 +74,10 @@ public class PrimerParcial {
                             System.out.println("Empleado: " + objeto.toString() + "\nSueldo: " + objeto.Ingresos());				
                         }
                         for(EmpleadoAsalariado objeto : ListaAsalariado) 
+                        {
+                            System.out.println("Empleado: " + objeto.toString() + "\nSueldo: " + objeto.Ingresos());				
+                        }
+                        for(EmpleadoPorComision objeto : ListaComision) 
                         {
                             System.out.println("Empleado: " + objeto.toString() + "\nSueldo: " + objeto.Ingresos());				
                         }

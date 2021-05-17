@@ -14,4 +14,8 @@ class Repuesto {
         this.Precio = Precio;
     }
     
+    public Repuesto(double Precio){
+        this.Precio = Precio;
+    }
+    
 }
