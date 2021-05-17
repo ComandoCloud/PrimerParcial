@@ -60,15 +60,15 @@ public class EmpleadoPorHoras extends Empleado {
     public double Ingresos(){
         
         double MontoTotal = 0, MontoTotalExtra = 0, MontoFinalExtra = 0;
-        if(this.horasTrabajadas < 40){
-            MontoTotal = this.horasTrabajadas * 375;
+        if(this.horasTrabajadas <= 40){
+            MontoTotal = this.horasTrabajadas * this.sueldoPorHora;
             return MontoTotal;
         }
         else{
             int HorasTotales = 0;
-            MontoTotal = this.horasTrabajadas * 375;
+            MontoTotal = this.horasTrabajadas * this.sueldoPorHora;
             HorasTotales = this.horasTrabajadas - 40;
-            MontoTotalExtra = HorasTotales * 750;
+            MontoTotalExtra = HorasTotales * (this.sueldoPorHora*2);
             MontoFinalExtra = MontoTotal + MontoTotalExtra;
             return MontoFinalExtra;
         }           
