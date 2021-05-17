@@ -6,7 +6,7 @@ package primerparcial;
 class Repuesto {
     private double Precio;
     
-      public Repuesto(double Precio){
+    public Repuesto(double Precio){
         this.Precio = Precio;
     }
 
@@ -22,8 +22,5 @@ class Repuesto {
         return this.Precio;
     }
     
-    public Repuesto(double Precio){
-        this.Precio = Precio;
-    }
     
 }
