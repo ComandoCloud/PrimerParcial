@@ -3,6 +3,8 @@ package primerparcial;
  *
  * @author Irene
  */
+import primerparcial.*;
+
 public class Factura {
     private int NumeroFactura;
     private Repuesto repuestos[];
@@ -12,11 +14,17 @@ public class Factura {
          this.NumeroFactura=NumeroFactura;
          this.repuestos=repuestos;
          this.montoTotal=montoTotal;
-      
     }
     
-    public double montoTotal(){
-       return 0; 
+    public double calculaMonto(){
+         double montoTotalLlanta=0;
+         for (int i = 0; i < this.repuestos.length; i++){
+          if(this.repuestos[i] instanceof Llantas ){
+             montoTotalLlanta=montoTotalLlanta + (montoTotalLlanta * 1.21);
+         }else
+              montoTotalLlanta = montoTotalLlanta + montoTotalLlanta;
+       }
+       return montoTotalLlanta;
     }
     public int getNumeroFactura() {
         return NumeroFactura;
@@ -33,16 +41,5 @@ public class Factura {
     public void setRepuesto(Repuesto[] repuestos) {
         this.repuestos = repuestos;
     }
-
-    public double getMontoTotal() {
-        return montoTotal;
-    }
-
-    public void setMontoTotal(double montoTotal) {
-        this.montoTotal = montoTotal;
-    }
-    
-
-   
     
 }
