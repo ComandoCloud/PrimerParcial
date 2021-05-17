@@ -29,7 +29,9 @@ public class Empleado {
         return this.Nombre.toString() + " , "+ this.Apellido.toString();
     }
     
-    public double Ingresos(double MontoTotal){
-        return MontoTotal;    
+    public double Ingresos(){
+        return 0;    
     }
+    
+    
 }

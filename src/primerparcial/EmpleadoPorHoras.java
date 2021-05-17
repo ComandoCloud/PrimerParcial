@@ -4,12 +4,13 @@
  * and open the template in the editor.
  */
 package primerparcial;
-
+import java.util.*;  
+import java.io.*;  
 /**
  *
  * @author Maximiliano Kiss
  */
-public class EmpleadoPorHoras {
+public class EmpleadoPorHoras extends Empleado {
     
     private double sueldoPorHora;
     private int horasTrabajadas;
@@ -40,5 +41,41 @@ public class EmpleadoPorHoras {
      */
     public void setHorasTrabajadas(int horasTrabajadas) {
         this.horasTrabajadas = horasTrabajadas;
+    }
+    
+    public EmpleadoPorHoras(){
+        
+    }
+    public EmpleadoPorHoras(String nombre, String Apellido, int numSeguroSocial, int Horas, double Sueldo){
+        super(nombre,Apellido,numSeguroSocial);
+        this.horasTrabajadas =Horas;
+        this.sueldoPorHora =  Sueldo;
+    }
+    
+    public static void main(String[] args){
+        
+    }
+    
+    @Override
+    public double Ingresos(){
+        
+        double MontoTotal = 0, MontoTotalExtra = 0, MontoFinalExtra = 0;
+        if(this.horasTrabajadas < 40){
+            MontoTotal = this.horasTrabajadas * 375;
+            return MontoTotal;
+        }
+        else{
+            int HorasTotales = 0;
+            MontoTotal = this.horasTrabajadas * 375;
+            HorasTotales = this.horasTrabajadas - 40;
+            MontoTotalExtra = HorasTotales * 750;
+            MontoFinalExtra = MontoTotal + MontoTotalExtra;
+            return MontoFinalExtra;
+        }           
+    }  
+    
+    @Override
+    public String toString(){
+        return this.Nombre + " , " + this.Apellido;
     }
 }
