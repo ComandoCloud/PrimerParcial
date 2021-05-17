@@ -56,7 +56,9 @@ public class PrimerParcial {
                     }
                     break;
                 case 2:
-                    System.out.println("Elegiste opcion 2");
+                    Repuesto[] verRep = new Repuesto[3];
+                    //Repuesto[0] = new Repuesto();
+                    //Factura oFactura = new Factura(1 , );
                     break;
                 case 3:
                         for(EmpleadoPorHoras objeto : ListaEmpleadoHoras) 

@@ -8,7 +8,7 @@ public class Factura {
     private Repuesto repuestos[];
     private double montoTotal;
 
-      public Factura(int NumeroFactura,Repuesto repuestos[] ,double montoTotal){
+    public Factura(int NumeroFactura,Repuesto repuestos[] ,double montoTotal){
          this.NumeroFactura=NumeroFactura;
          this.repuestos=repuestos;
          this.montoTotal=montoTotal;

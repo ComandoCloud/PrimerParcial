@@ -62,4 +62,9 @@ public class EmpleadoPorComision extends Empleado {
     public void setTarifaComision(double tarifaComision) {
         this.tarifaComision = tarifaComision;
     }
+    
+        
+    @Override public double Ingresos(){
+        return 600 * this.cantidadReparaciones ;
+    }
 }
