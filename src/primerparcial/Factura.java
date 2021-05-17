@@ -11,9 +11,10 @@ public class Factura {
     private double montoTotal;
 
     public Factura(int NumeroFactura,Repuesto repuestos[] ,double montoTotal){
-         this.NumeroFactura=NumeroFactura;
-         this.repuestos=repuestos;
-         this.montoTotal = montoTotal;
+        this.NumeroFactura=NumeroFactura;
+        this.repuestos=repuestos;
+        this.montoTotal = montoTotal;
+        calculaMonto();
     }
     
     public double calculaMonto(){
@@ -39,5 +40,9 @@ public class Factura {
 
     public void setRepuesto(Repuesto[] repuestos) {
         this.repuestos = repuestos;
+    }
+    
+    public String toString(){
+        return this.NumeroFactura + " - $ " + this.montoTotal;
     }
 }

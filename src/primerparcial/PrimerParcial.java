@@ -23,6 +23,7 @@ public class PrimerParcial {
         List<EmpleadoAsalariado> ListaAsalariado = new ArrayList<EmpleadoAsalariado>();  
         List<EmpleadoPorHoras> ListaEmpleadoHoras = new ArrayList<EmpleadoPorHoras>(); 
         List<EmpleadoPorComision> ListaComision = new ArrayList<EmpleadoPorComision>(); 
+        List<Factura> ListaFactura = new ArrayList<Factura>(); 
         do{
             Opcion =0;
             System.out.println("Ingrese una opcion: \n1.CARGAR EMPLEADOS \n2.CARGAR DEUDAS/FACTURAS \n3.MOSTRAR EMPLEADOS CON SALARIOS \n4.MOSTRAR FACTURAS CON DEUDAS");
@@ -63,10 +64,17 @@ public class PrimerParcial {
                     break;
                 case 2:
                     Repuesto[] verRep = new Repuesto[3];
-                    verRep[0] = new Repuesto(1000);
-                    verRep[1] = new Repuesto(2000);
-                    verRep[2] = new Repuesto(3000);
+                    verRep[0] = new Llantas(1000);
+                    verRep[1] = new Llantas(2000);
+                    verRep[2] = new Ruedas(3000);
                     Factura oFactura = new Factura(1 , verRep, 2500);
+                    ListaFactura.add(oFactura);
+                    Repuesto[] verRep2 = new Repuesto[3];
+                    verRep2[0] = new Llantas(1000);
+                    verRep2[1] = new Llantas(2000);
+                    verRep2[2] = new Ruedas(3000);
+                    Factura oFactura2 = new Factura(2 , verRep2, 3500);
+                    ListaFactura.add(oFactura2);
                     break;
                 case 3:
                         for(EmpleadoPorHoras objeto : ListaEmpleadoHoras) 
@@ -81,12 +89,18 @@ public class PrimerParcial {
                         {
                             System.out.println("Empleado: " + objeto.toString() + "\nSueldo: " + objeto.Ingresos());				
                         }
+
                         break;
+                case 4:
+                    for(Factura objeto : ListaFactura) 
+                    {
+                      System.out.println("Factura: " + objeto.toString());				
+                    }
+                    break;
                 default:
                     System.out.println("Opcion Incorrecta");
                     break;
             }
         }while(Opcion != 0);
     }
-    //hola
 }
