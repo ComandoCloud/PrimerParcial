@@ -40,5 +40,4 @@ public class Factura {
     public void setRepuesto(Repuesto[] repuestos) {
         this.repuestos = repuestos;
     }
-    
 }
